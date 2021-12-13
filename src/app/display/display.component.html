@@ -1,0 +1,40 @@
+<div class="a" style="align-items: center;">
+<div class="card" style="width: 28rem;">
+    <div class="card-header" style="text-align:center;">
+       <b> Welcome {{displayinfo["Name"]}}</b>
+      </div>
+    <div class="row no-gutters">
+
+        <div class="col">
+            <img src="assets\image.png"  alt="">
+        </div>
+        <div class="col">
+            <div class="card-block px-2">
+                <table>
+                    <tr>
+                        <td><b>User Name:</b></td>
+                        <td>{{displayinfo["username"]}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Email:</b></td>
+                        <td>{{displayinfo["Email"]}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>phone:</b></td>
+                        <td>{{displayinfo["Mobile"]}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Address:</b></td>
+                        <td>{{displayinfo["Address"]}}</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+    <div class="card-footer" style="text-align:center;">
+        <button (click)="logout()">Logout</button>
+       </div>
+</div>
+</div>
+<!-- <img src=""  alt=""> -->

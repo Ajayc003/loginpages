@@ -1,0 +1,20 @@
+<div >
+    <form [formGroup]="myform1" (ngSubmit)="login()">
+       <table>
+       <tr>
+        <td><label for="username"><b>UserName</b></label></td>
+        <td><input type="text"  class="form-control" formControlName="username"><br>
+        <span class="error" *ngIf="username.touched && username.invalid">username is required</span></td>
+    </tr>
+    
+    <tr>
+         <td>  <label for="Password"><b>Password</b></label></td>
+         <td>  <input type="text"  class="form-control" formControlName="Password"><br>
+    <span class="error" *ngIf="Password.touched && Password.invalid">Password is required</span></td>
+    </tr>
+<p *ngIf="myform1.invalid">Complete the form to enable button.</p>
+<tr> <td>  <button type="submit" class="btn btn-primary" [disabled]="!myform1.valid">Login</button> </td></tr>
+<tr><a href="javascript: void(0);" (click)="onclicking()">New to site please click here</a></tr>
+    </table> 
+    </form> 
+</div>

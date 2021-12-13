@@ -1,0 +1,62 @@
+<div class="a">   
+    <div class="card"> 
+        <div class="card-header" style="border:black solid 2px; text-align: center;">
+           <h1> Registration </h1>
+        </div>
+        <div class="card-block">
+    <form [formGroup]="myform" (ngSubmit)="register()">
+       
+        <table>
+       <tr>
+
+        <td><label for="username"><b>UserName *</b></label></td>
+        <td><input type="text" formControlName="username"><br>
+            <span class="error" *ngIf="username.touched && username.invalid">username is required</span>
+            <span class="error" *ngIf="userexists">username already exists</span></td>
+    </tr>
+       <tr>
+       <td><label for="Name"><b>Name *</b></label></td>
+       <td> <input type="text" formControlName="Name"><br>
+        <span class="error" *ngIf="Name.touched && Name.invalid">Name is required</span></td>
+    </tr>
+    <tr>
+    <td> <label for="Email"><b>Email *</b></label></td>
+<td>   <input type="text" formControlName="Email"><br>
+    <span class="error" *ngIf="Email.touched && Email.errors?.required">email is required</span>
+<span class="error" *ngIf="Email.errors?.email">enter a valid email</span></td>
+    </tr>
+    <tr>
+    <td>  <label for="Password"><b>Password *</b></label></td>
+    <td>  <input type="text" formControlName="Password"><br>
+        <span class="error" *ngIf="Password.touched && Password.errors?.required">Password is required</span>
+        <span class="error" *ngIf="Password.errors?.minlength">Password requires minimum 8 characters</span>  
+        <!-- <span class="error" *ngIf="Password.errors?.pattern">Password requires both alphabets and numbers</span> -->
+    </td>
+    </tr>
+    <tr>   
+    <td>  <label for="ConfirmPassword"><b>Confirm Password *</b></label></td>
+<td>   <input type="text" formControlName="ConfirmPassword"><br>
+    <span class="error" *ngIf="ConfirmPassword.touched && ConfirmPassword.errors?.required">Please enter the password another time</span>
+    <span class="error" *ngIf="passwordmatch">Password should match</span></td>
+    </tr> 
+    <tr>  
+    <td>  <label for="Mobile"><b>Phone Number *</b></label></td>
+<td> <input type="text" formControlName="Mobile"><br>
+    <span class="error" *ngIf="Mobile.touched && Mobile.errors?.required">Phone Number is required</span>
+    <span class="error" *ngIf=" Mobile.errors?.pattern">Phone Number should contain exact 10 numbers only</span>
+</td>
+    </tr> 
+    <tr>  
+        <td>  <label for="Address"><b>Address *</b></label></td>
+        <td>  <input type="text" formControlName="Address"><br>
+            <span class="error" *ngIf="Address.touched && Address.errors?.required">Address is required</span>
+            <span class="error" *ngIf=" Address.errors?.maxlength">Address can take only upto 30 characters</span></td>
+    </tr><br>
+    <p *ngIf="myform.invalid">Complete the form to enable button.</p>
+<tr>   <button type="submit" [disabled]="!myform.valid">Register</button> </tr>
+    </table> 
+    </form>
+    </div> 
+    </div>
+
+</div>
